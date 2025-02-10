@@ -3,14 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Guessing Game</title>
+    <title>Crazy Color Guessing Game</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Color Guessing Game😃</h1>
-        <p data-testid="gameInstructions">Guess the correct color, Goodluck✌🏾</p>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen">
+        <h1>Loading...</h1>
+        <p id="loadingText">0%</p>
+    </div>
+
+    <div class="container" id="gameContainer" style="display: none;">
+        <h1>Color Guessing Game</h1>
+        <p data-testid="gameInstructions">Guess the correct color!</p>
+
+        <!-- Target Color Box -->
         <div id="colorBox" data-testid="colorBox"></div>
+
+        <!-- Color Options -->
         <div class="color-options">
             <button class="color-btn" data-testid="colorOption"></button>
             <button class="color-btn" data-testid="colorOption"></button>
@@ -19,10 +30,21 @@
             <button class="color-btn" data-testid="colorOption"></button>
             <button class="color-btn" data-testid="colorOption"></button>
         </div>
+
+        <!-- Game Status Message -->
         <p id="gameStatus" data-testid="gameStatus"></p>
+
+        <!-- Score Counter -->
         <p>Score: <span id="score" data-testid="score">0</span></p>
+
+        <!-- New Game Button -->
         <button id="newGameButton" data-testid="newGameButton">New Game</button>
     </div>
+
+    <!-- Sound Effects -->
+    <audio id="correctSound" src="correct.mp3"></audio>
+    <audio id="wrongSound" src="wrong.mp3"></audio>
+
     <script src="script.js"></script>
 </body>
 </html>
